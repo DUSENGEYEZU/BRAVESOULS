@@ -12,6 +12,7 @@ import { VissionComponent } from './vission/vission.component';
 import { ClientsComponent } from './clients/clients.component';
 import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 import { WhyChooseUsComponent } from './why-choose-us/why-choose-us.component';
+import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { WhyChooseUsComponent } from './why-choose-us/why-choose-us.component';
     VissionComponent,
     ClientsComponent,
     WhatWeDoComponent,
-    WhyChooseUsComponent
+    WhyChooseUsComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,

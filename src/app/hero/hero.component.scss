@@ -1,0 +1,45 @@
+.typing {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid white;
+    animation: typing 4s steps(60, end) forwards, blink 0.7s step-end infinite;
+    max-width: 100%;
+    white-space: normal; /* ✅ allow wrapping */
+  }
+  .blinking-cursor {
+    display: inline-block;
+    width: 1ch;
+    animation: blink 1s step-end infinite;
+    color: white;
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  /* Typing animates character count based on character units (ch) */
+  @keyframes typing {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 60ch; /* Adjust to how many characters you want to show */
+    }
+  }
+  
+  @keyframes blink {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: white;
+    }
+  }
+  
