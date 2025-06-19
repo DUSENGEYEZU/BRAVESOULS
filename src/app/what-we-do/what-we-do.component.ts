@@ -8,45 +8,26 @@ import { Component } from '@angular/core';
 export class WhatWeDoComponent {
   services = [
     {
-      title: 'Web Design',
+      title: 'AI & Machine Learning Services',
       description: 'A small river named Duden flows by their place and supplies.',
       icon: 'assets/icons/web-design.svg',
     },
     {
-      title: 'Web Application',
+      title: 'Data Solutions',
       description: 'A small river named Duden flows by their place and supplies.',
       icon: 'assets/icons/web-app.svg',
     },
     {
-      title: 'Web Development',
+      title: 'Custom Software Development',
       description: 'A small river named Duden flows by their place and supplies.',
       icon: 'assets/icons/web-dev.svg',
     },
     {
-      title: 'Banner Design',
+      title: 'Digital Transformation Consulting',
       description: 'A small river named Duden flows by their place and supplies.',
       icon: 'assets/icons/banner.svg',
     },
-    {
-      title: 'Branding',
-      description: 'A small river named Duden flows by their place and supplies.',
-      icon: 'assets/icons/branding.svg',
-    },
-    {
-      title: 'Icon Design',
-      description: 'A small river named Duden flows by their place and supplies.',
-      icon: 'assets/icons/icon.svg',
-    },
-    {
-      title: 'Graphic Design',
-      description: 'A small river named Duden flows by their place and supplies.',
-      icon: 'assets/icons/graphic.svg',
-    },
-    {
-      title: 'SEO',
-      description: 'A small river named Duden flows by their place and supplies.',
-      icon: 'assets/icons/seo.svg',
-    },
+    
   ];
 }
 
