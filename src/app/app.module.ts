@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { LucideAngularModule } from 'lucide-angular';
+import { Building, HeartPulse, GraduationCap, BriefcaseBusiness, Cpu } from 'lucide-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -30,7 +31,14 @@ import { HeroComponent } from './hero/hero.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+      LucideAngularModule.pick({
+      Building,
+      HeartPulse,
+      GraduationCap,
+      BriefcaseBusiness,
+      Cpu
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

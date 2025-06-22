@@ -1,20 +1,19 @@
 <section id="what-we-do" class="py-24 bg-black bg-opacity-80 text-white">
-    <div class="max-w-7xl mx-auto text-center px-4">
-      <p class="uppercase text-sm tracking-widest text-green-600 font-semibold">I am great at</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">We do awesome services for our clients</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto mb-12">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-  
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div *ngFor="let service of services" class="bg-black-90 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
-          <div class="flex justify-center mb-4">
-            <div class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center">
-              <img [src]="service.icon" class="w-6 h-6" alt="icon" />
-            </div>
+  <div class="max-w-7xl mx-auto text-center px-4">
+    <p class="uppercase text-sm tracking-widest text-green-600 font-semibold">What We Do</p>
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">We do awesome services for our clients</h2>
+    <p class="text-gray-300 mb-12 text-lg">
+      We specialize in delivering innovative software solutions that drive business success. Our services include:
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div *ngFor="let service of services" class="bg-neutral-900 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
+        <div class="flex justify-center mb-4">
+          <div class="w-14 h-14 bg-green-200 rounded-full flex items-center justify-center">
+            <i [class]="service.iconClass + ' text-green-700 text-2xl'"></i>
           </div>
-          <h3 class="text-lg font-semibold">{{ service.title }}</h3>
-          <p class="text-sm text-gray-500 mt-2">{{ service.description }}</p>
         </div>
+        <h3 class="text-lg font-semibold">{{ service.title }}</h3>
+        <p class="text-sm text-gray-400 mt-2">{{ service.description }}</p>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
