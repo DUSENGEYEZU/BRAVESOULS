@@ -1,3 +1,61 @@
+/* Hero left panel: staggered text entrance */
+.hero-text-in {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: hero-text-entrance 0.8s ease-out forwards;
+}
+
+@keyframes hero-text-entrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero right panel: video background with zoom/pan */
+.hero-video-wrap {
+  .hero-video {
+    position: absolute;
+    inset: -2%;
+    width: 104%;
+    height: 104%;
+    object-fit: cover;
+    animation: hero-video-zoom 20s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes hero-video-zoom {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.12) translate(-1%, -1%);
+  }
+}
+
+/* Hero image entrance and subtle float */
+.hero-image-animated {
+  animation: hero-image-entrance 1.2s ease-out forwards, hero-image-float 8s ease-in-out 1.2s infinite;
+  opacity: 0;
+  transform: scale(1.05) translateY(20px);
+}
+
+@keyframes hero-image-entrance {
+  to {
+    opacity: 0.94;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes hero-image-float {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.03) translateY(-8px);
+  }
+}
+
 .typing {
     display: inline-block;
     overflow: hidden;

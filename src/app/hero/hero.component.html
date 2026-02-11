@@ -1,25 +1,58 @@
-<section class="relative min-h-screen text-white flex items-center justify-center overflow-hidden pt-16">
-  <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0">
-    <source src="assets/videos/bg3.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <div class="absolute inset-0 bg-brave-black opacity-75 z-10"></div>
+<section class="relative pt-16 min-h-screen flex flex-col">
+  <div class="flex-1 grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] min-h-[calc(100vh-4rem)]">
+    <!-- Left panel: dark teal content -->
+    <div class="bg-[#1D3533] flex flex-col justify-center px-6 md:px-12 lg:px-16 py-12 lg:py-0 order-2 lg:order-1">
+      <div class="max-w-xl">
+        <!-- Branding -->
+        <div class="hero-text-in flex items-center gap-3 mb-4" style="animation-delay: 0.1s">
+          <img src="assets/images/logo.png" alt="Brave Souls" class="h-12 w-auto" />
+          <div>
+            <div class="text-brave-gold font-bold text-lg md:text-xl tracking-wide uppercase">Brave Souls</div>
+            <div class="text-brave-gold/90 text-sm font-semibold tracking-wide uppercase">Wellness Group Ltd</div>
+          </div>
+        </div>
+        <p class="hero-text-in text-brave-gold text-sm md:text-base mb-6 font-serif" style="animation-delay: 0.25s">Healthy Body and Spirit</p>
 
-  <div class="relative z-20 w-full max-w-4xl px-6 text-center">
-    <p class="text-brave-gold text-sm uppercase tracking-widest font-semibold mb-2">Healthy Body and Spirit</p>
-    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
-      Healthy Body. Strong Spirit.
-    </h1>
-    <p class="text-lg md:text-xl text-brave-cream/90 max-w-2xl mx-auto mb-8">
-      Structured Fitness & Wellness Coaching for Individuals, Groups, and Organizations.
-    </p>
-    <div class="flex flex-wrap gap-4 justify-center">
-      <a routerLink="/contact" class="bg-brave-gold hover:bg-brave-gold-light text-brave-black font-semibold px-8 py-3 rounded-lg transition">
-        Apply for Coaching
-      </a>
-      <a routerLink="/" fragment="who-we-are" class="border-2 border-brave-gold text-brave-gold hover:bg-brave-gold hover:text-brave-black font-semibold px-8 py-3 rounded-lg transition">
-        Learn More
-      </a>
+        <!-- Main headline -->
+        <h1 class="hero-text-in text-white font-serif text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-4" style="animation-delay: 0.4s">
+          Healthy Body. <br />Strong Spirit.
+        </h1>
+        <p class="hero-text-in text-white text-xs md:text-sm uppercase tracking-[0.2em] font-medium text-white/90 mb-8" style="animation-delay: 0.55s">
+          Structured Fitness & Wellness Coaching
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-text-in flex flex-wrap gap-4" style="animation-delay: 0.7s">
+          <a routerLink="/contact" class="inline-block bg-brave-gold hover:bg-brave-gold-light text-white font-semibold px-8 py-3 rounded-full transition hover:scale-105">
+            Apply for Coaching
+          </a>
+          <a routerLink="/" fragment="who-we-are" class="inline-block border-2 border-brave-gold text-brave-gold hover:bg-brave-gold hover:text-brave-black font-semibold px-8 py-3 rounded-full transition hover:scale-105">
+            Learn More
+          </a>
+        </div>
+      </div>
     </div>
+
+    <!-- Right panel: video background + hero image with animation -->
+    <div class="hero-image-panel relative h-72 lg:h-auto min-h-[320px] lg:min-h-0 order-1 lg:order-2 overflow-hidden">
+      <!-- Moving/zooming video background -->
+      <div class="hero-video-wrap absolute inset-0">
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="assets/videos/bg3.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute inset-0 bg-[#1D3533]/35 z-10"></div>
+      </div>
+      <!-- Hero image with entrance animation (slight transparency so video motion shows through) -->
+      <img
+        src="assets/images/hero-image.png"
+        alt="Fitness and wellness"
+        class="hero-image-animated absolute inset-0 w-full h-full object-cover object-center z-20"
+      />
+    </div>
+  </div>
+
+  <!-- Bottom strip -->
+  <div class="bg-[#1D3533] text-brave-gold text-center py-3 px-6 text-xs md:text-sm uppercase tracking-widest font-medium">
+    Discipline · Structure · Transformation
   </div>
 </section>
