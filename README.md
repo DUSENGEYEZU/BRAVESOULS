@@ -1,27 +1,44 @@
-# SoftIntelligence
+# Brave Souls Wellness Group Ltd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+**Healthy Body and Spirit** — Structured Fitness & Wellness Coaching for Individuals, Groups, and Organizations.
 
-## Development server
+## About
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This is the official website for Brave Souls Wellness Group Ltd, a registered wellness company based in Kigali, Rwanda. The site is built with **Angular 18** and **Tailwind CSS**.
 
-## Code scaffolding
+## Pages
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Home** — Hero, Who We Are, Founders, Programs, Body–Mind–Spirit, Why Choose Us, Testimonials, Contact
+- **About Us** — Company overview and philosophy
+- **Programs** — Fitness, Wellness & Mental Fitness, Corporate & Community programs
+- **Corporate Wellness** — Corporate-ready wellness solutions
+- **Our Team** — Leadership (Coach Brave & Catherine)
+- **Testimonials** — Client stories
+- **Contact Us** — Contact info and inquiry form
+
+## Development
+
+```bash
+npm install
+npm start
+```
+
+Open [http://localhost:4200](http://localhost:4200).
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm run build
+```
 
-## Running unit tests
+Output: `dist/bravesouls/`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Brand
 
-## Running end-to-end tests
+- **Primary:** Deep Green (`#1a4d3e`) — wellness, growth
+- **Secondary:** Gold (`#c9a227`) — excellence, leadership
+- **Neutral:** Cream (`#faf8f5`), Soft Black (`#1a1a1a`)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+© 2025 Brave Souls Wellness Group Ltd. All rights reserved.

@@ -1,18 +1,25 @@
-<section class="relative h-screen text-white flex items-center justify-center overflow-hidden pt-16">
-    <!-- 🎬 Background Video -->
-    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0">
-        <source src="assets/videos/bg3.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
- 
-    <!-- 🖤 Dark overlay -->
-    <div class="absolute inset-0 bg-black opacity-70 z-10"></div>
-  
-    <!-- ✍️ Typing Text -->
-    <div class="relative z-20 w-full max-w-2xl px-5 text-left">
-      <h1 class="text-5xl md:text-5xl font-semibold leading-snug">
-        {{ typedText }}<span class="blinking-cursor">|</span>
-      </h1>
+<section class="relative min-h-screen text-white flex items-center justify-center overflow-hidden pt-16">
+  <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0">
+    <source src="assets/videos/bg3.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="absolute inset-0 bg-brave-black opacity-75 z-10"></div>
+
+  <div class="relative z-20 w-full max-w-4xl px-6 text-center">
+    <p class="text-brave-gold text-sm uppercase tracking-widest font-semibold mb-2">Healthy Body and Spirit</p>
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+      Healthy Body. Strong Spirit.
+    </h1>
+    <p class="text-lg md:text-xl text-brave-cream/90 max-w-2xl mx-auto mb-8">
+      Structured Fitness & Wellness Coaching for Individuals, Groups, and Organizations.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a routerLink="/contact" class="bg-brave-gold hover:bg-brave-gold-light text-brave-black font-semibold px-8 py-3 rounded-lg transition">
+        Apply for Coaching
+      </a>
+      <a routerLink="/" fragment="who-we-are" class="border-2 border-brave-gold text-brave-gold hover:bg-brave-gold hover:text-brave-black font-semibold px-8 py-3 rounded-lg transition">
+        Learn More
+      </a>
     </div>
-  </section>
-  
+  </div>
+</section>

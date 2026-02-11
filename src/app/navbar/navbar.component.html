@@ -1,15 +1,16 @@
-<nav class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 text-white">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between">
-      <div class="text-xl font-bold">Softtelligence</div>
-      <ul class="flex space-x-4 text-sm font-medium">
-        <li><a href="#about" class="hover:text-blue-600">About</a></li>
-        <li><a href="#mission" class="hover:text-blue-600">Mission</a></li>
-        <li><a href="#mission" class="hover:text-blue-600">Vision</a></li>
-        <li><a href="#what-we-do" class="hover:text-blue-600">What We Do</a></li>
-        <li><a href="#why-choose-us" class="hover:text-blue-600">Why Us</a></li>
-        <li><a href="#clients" class="hover:text-blue-600">Clients</a></li>
-        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  
+<nav class="fixed top-0 left-0 w-full z-50 bg-brave-black bg-opacity-95 text-white border-b border-brave-green/30">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+    <a routerLink="/" class="text-xl font-bold text-brave-cream">
+      Brave Souls Wellness Group Ltd
+    </a>
+    <ul class="flex flex-wrap gap-4 text-sm font-medium">
+      <li><a routerLink="/" routerLinkActive="text-brave-gold" [routerLinkActiveOptions]="{exact: true}" class="hover:text-brave-gold transition">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="text-brave-gold" class="hover:text-brave-gold transition">About Us</a></li>
+      <li><a routerLink="/programs" routerLinkActive="text-brave-gold" class="hover:text-brave-gold transition">Programs</a></li>
+      <li><a routerLink="/corporate-wellness" routerLinkActive="text-brave-gold" class="hover:text-brave-gold transition">Corporate Wellness</a></li>
+      <li><a routerLink="/team" routerLinkActive="text-brave-gold" class="hover:text-brave-gold transition">Our Team</a></li>
+      <li><a routerLink="/testimonials" routerLinkActive="text-brave-gold" class="hover:text-brave-gold transition">Testimonials</a></li>
+      <li><a routerLink="/contact" routerLinkActive="text-brave-gold" class="hover:text-brave-gold transition">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>

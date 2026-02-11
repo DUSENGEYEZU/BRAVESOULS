@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'soft-intelligence';
+  title = 'Brave Souls Wellness Group Ltd';
 }

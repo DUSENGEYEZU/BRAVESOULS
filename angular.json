@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "soft-intelligence": {
+    "bravesouls": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/soft-intelligence",
+            "outputPath": "dist/bravesouls",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -32,7 +32,7 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "baseHref": "/soft-intelligence/",
+            "baseHref": "/",
             "assets": [
               "src/assets",
               "src/favicon.ico"
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "soft-intelligence:build:production"
+              "buildTarget": "bravesouls:build:production"
             },
             "development": {
-              "buildTarget": "soft-intelligence:build:development"
+              "buildTarget": "bravesouls:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -109,7 +109,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/soft-intelligence/"
+            "baseHref": "/"
           }
         }
       }
