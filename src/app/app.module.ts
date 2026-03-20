@@ -22,6 +22,8 @@ import { BodyMindSpiritComponent } from './body-mind-spirit/body-mind-spirit.com
 import { ProgramsComponent } from './programs/programs.component';
 import { CorporateWellnessComponent } from './corporate-wellness/corporate-wellness.component';
 import { TeamComponent } from './team/team.component';
+import { EducationComponent } from './education/education.component';
+import { BookConsultationComponent } from './book-consultation/book-consultation.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { TeamComponent } from './team/team.component';
     BodyMindSpiritComponent,
     ProgramsComponent,
     CorporateWellnessComponent,
-    TeamComponent
+    TeamComponent,
+    EducationComponent,
+    BookConsultationComponent
   ],
   imports: [
     BrowserModule,

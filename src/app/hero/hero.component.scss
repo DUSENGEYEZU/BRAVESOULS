@@ -70,7 +70,7 @@
     animation: blink 1s step-end infinite;
     color: white;
   }
-  
+
   @keyframes blink {
     0%, 100% {
       opacity: 0;
@@ -79,9 +79,9 @@
       opacity: 1;
     }
   }
-  
-  
-  
+
+
+
   /* Typing animates character count based on character units (ch) */
   @keyframes typing {
     from {
@@ -91,7 +91,7 @@
       width: 60ch; /* Adjust to how many characters you want to show */
     }
   }
-  
+
   @keyframes blink {
     from, to {
       border-color: transparent;
@@ -100,4 +100,3 @@
       border-color: white;
     }
   }
-  
