@@ -1,25 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
+import { assetPathFromBase } from '../utils/asset-path';
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })
-export class HeroComponent implements OnInit {
-  fullText = 'Empowering organisations with intelligent digital solutions.';
-  typedText = '';
-  currentIndex = 0;
+export class HeroComponent {
+  private readonly baseHref = inject(APP_BASE_HREF);
 
-  ngOnInit() {
-    this.typeNextCharacter();
-  }
+  /** Primary logo; falls back to logo.png in template if this fails to load */
+  logoSrc = assetPathFromBase(this.baseHref, 'assets/images/logcorrect.jpeg');
+  private readonly logoFallbackSrc = assetPathFromBase(this.baseHref, 'assets/images/logo.png');
 
-  typeNextCharacter() {
-    if (this.currentIndex < this.fullText.length) {
-      this.typedText += this.fullText[this.currentIndex];
-      this.currentIndex++;
-      const delay = Math.random() * (150 - 40) + 40; // random delay between 40–150ms
-      setTimeout(() => this.typeNextCharacter(), delay);
+  readonly heroImageSrc = assetPathFromBase(this.baseHref, 'assets/images/hero-image.png');
+  readonly heroVideoSrc = assetPathFromBase(this.baseHref, 'assets/videos/bg3.mp4');
+
+  onLogoError(): void {
+    if (this.logoSrc !== this.logoFallbackSrc) {
+      this.logoSrc = this.logoFallbackSrc;
     }
   }
 }

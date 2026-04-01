@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { LucideAngularModule } from 'lucide-angular';
 import { Building, HeartPulse, GraduationCap, BriefcaseBusiness, Cpu } from 'lucide-angular';
@@ -60,7 +61,12 @@ import { BookConsultationComponent } from './book-consultation/book-consultation
       Cpu
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useFactory: () => (typeof document !== 'undefined' ? document.querySelector('base')?.getAttribute('href') ?? '/' : '/')
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
