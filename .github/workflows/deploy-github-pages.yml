@@ -1,5 +1,10 @@
 # Automatic deploy: every push to master (or main) builds and publishes to gh-pages.
-# Requires: repo Settings → Pages → Source = branch gh-pages / (root).
+#
+# GitHub UI settings (cannot be set from this file — do once in the repo on github.com):
+#   Settings → Actions → General → Workflow permissions → Read and write permissions
+#     (required so GITHUB_TOKEN can push to gh-pages; default read-only breaks deploy)
+#   Settings → Pages → Deploy from branch gh-pages / (root)
+# See also: .github/README.md and DEPLOYMENT.md → "GitHub Actions — repository settings"
 name: Deploy to GitHub Pages
 
 on:

@@ -10,7 +10,7 @@ No tool in this repository can log into **your** GitHub account or **your** doma
 2. **GitHub (browser)** — Sign in as a user with admin on `DUSENGEYEZU/BRAVESOULS`, then **Settings → Pages**: choose the **`gh-pages`** branch as the source (first time), set **Custom domain**, and later **Enforce HTTPS**.
 3. **(Optional)** Verify the domain under **GitHub account/org → Settings → Pages** as described in GitHub’s docs.
 
-The workflow below automates **building and pushing** the site to `gh-pages` when you push to `master`; it does not replace those account-level steps.
+The workflow file automates **building and pushing** to `gh-pages`. **GitHub Actions also needs repository settings in the browser** (workflow permissions, Pages source). Those are listed in **[GitHub Actions — repository settings (required)](#github-actions--repository-settings-required)** below and in `.github/README.md`.
 
 | Item | Value |
 |------|--------|
@@ -62,17 +62,33 @@ GitHub recommends adding the custom domain in the repo **before** relying on DNS
 
 ---
 
-## GitHub Actions (automated deploy)
+## GitHub Actions — repository settings (required)
 
-The workflow [`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) runs on **every push** to **`master`** or **`main`** (and can be run manually via **Actions → Deploy to GitHub Pages → Run workflow**).
+The YAML workflow only defines **jobs and steps**. GitHub still needs these **Settings** on the website (they are **not** stored in the repo):
+
+| Step | Where | What to choose |
+|------|--------|----------------|
+| 1 | **Repository → Settings → Actions → General** | Scroll to **Workflow permissions**. Select **Read and write permissions** (not “Read repository contents and packages permissions” only). This lets `GITHUB_TOKEN` **push** to the `gh-pages` branch. If this stays read-only, the “Deploy to gh-pages” step fails with a permission error. |
+| 2 | **Same page** | Ensure **Allow GitHub Actions to create and approve pull requests** is optional for this workflow; the important part is read/write on the token. |
+| 3 | **Settings → Actions → General** (top) | If **Actions permissions** is set to “Disable actions”, turn Actions **on** so workflows run. |
+| 4 | **Settings → Pages** | **Build and deployment** → **Deploy from a branch** → Branch **`gh-pages`**, folder **`/`** (root). Save. |
+
+Official reference: [Automatic token authentication](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) and workflow permissions.
+
+---
+
+## GitHub Actions (what the workflow file does)
+
+The workflow [`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) runs on **every push** to **`master`** or **`main`** (and can be run manually: **Actions → Deploy to GitHub Pages → Run workflow**).
 
 It runs `npm ci`, `npm run build-prod`, then publishes `dist/bravesouls/browser` to the **`gh-pages`** branch with a **`CNAME`** file for `bravesoulswellness.com`.
 
-**First-time setup after merging this workflow:**
+**After the [repository settings](#github-actions--repository-settings-required) above are set:**
 
-1. **Settings → Pages → Build and deployment:** Source = **Deploy from a branch**, Branch = **`gh-pages`** / **`/`** (root). Save.
-2. Push to `master` (or run the workflow manually) so `gh-pages` updates.
-3. Set **Custom domain** and **Enforce HTTPS** as in [One-time: GitHub repository settings](#one-time-github-repository-settings).
+1. Push to `master` (or run the workflow manually) so `gh-pages` updates.
+2. Set **Custom domain** and **Enforce HTTPS** under **Settings → Pages** as in [One-time: GitHub repository settings](#one-time-github-repository-settings).
+
+Short index: [`.github/README.md`](.github/README.md).
 
 You can still deploy from your machine with `npm run deploy` if you prefer `angular-cli-ghpages` locally.
 
@@ -120,6 +136,8 @@ DNS changes can take from minutes up to 24 hours to propagate globally.
 
 | Symptom | What to check |
 |---------|----------------|
+| Actions job fails when pushing to `gh-pages` (permission denied) | **Settings → Actions → General → Workflow permissions** → **Read and write permissions**. |
+| Workflow does not run on push | **Settings → Actions** — ensure Actions are enabled; confirm you pushed to **`master`** or **`main`**. |
 | Site loads but assets 404 | `baseHref` in `angular.json` deploy options should be `"/"` for the custom domain; run `npm run deploy` (not `deploy:github-io`) unless you intentionally use the `/BRAVESOULS/` path. |
 | Custom domain drops after deploy | `cname` in `angular.json` must match the hostname in **Settings → Pages → Custom domain**. |
 | Certificate / HTTPS not available yet | Wait for DNS; then enable **Enforce HTTPS** when GitHub allows it. |

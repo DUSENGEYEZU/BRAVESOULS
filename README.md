@@ -35,7 +35,7 @@ Output: `dist/bravesouls/`
 
 ## Deployment
 
-Production hosting uses **GitHub Pages** on the domain **`bravesoulswellness.com`**. Pushing to **`master`** (or **`main`**) triggers an automatic deploy via GitHub Actions. DNS, GitHub settings, `ng deploy` options, and troubleshooting are documented in **[DEPLOYMENT.md](./DEPLOYMENT.md)**.
+Production hosting uses **GitHub Pages** on the domain **`bravesoulswellness.com`**. Pushing to **`master`** (or **`main`**) runs the workflow in [`.github/workflows/deploy-github-pages.yml`](./.github/workflows/deploy-github-pages.yml). You must also set **repository** options in GitHub (workflow **read/write** permission, **Pages** branch) — see **[`.github/README.md`](./.github/README.md)** and **[DEPLOYMENT.md](./DEPLOYMENT.md)** (DNS, HTTPS, troubleshooting).
 
 ## Brand
 
