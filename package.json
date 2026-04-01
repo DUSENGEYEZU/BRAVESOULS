@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build-prod": "ng build --configuration production",
-    "deploy": "ng deploy"
+    "deploy": "ng deploy",
+    "deploy:github-io": "ng deploy --base-href=/BRAVESOULS/"
   },
   "private": true,
   "dependencies": {

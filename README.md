@@ -33,6 +33,10 @@ npm run build
 
 Output: `dist/bravesouls/`
 
+## Deployment
+
+Production hosting uses **GitHub Pages** on the domain **`bravesoulswellness.com`**. DNS, GitHub settings, `ng deploy` options, and troubleshooting are documented in **[DEPLOYMENT.md](./DEPLOYMENT.md)**.
+
 ## Brand
 
 - **Primary:** Deep Green (`#1a4d3e`) — wellness, growth

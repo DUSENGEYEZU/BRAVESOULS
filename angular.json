@@ -109,8 +109,9 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/BRAVESOULS/",
-            "dir": "dist/bravesouls/browser"
+            "baseHref": "/",
+            "dir": "dist/bravesouls/browser",
+            "cname": "bravesoulswellness.com"
           }
         }
       }
