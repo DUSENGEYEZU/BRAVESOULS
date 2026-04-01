@@ -1,11 +1,12 @@
-# Builds the Angular app and publishes to the gh-pages branch for GitHub Pages.
-# Requires: repo Settings → Pages → Build and deployment → Source = Deploy from a branch → gh-pages / (root).
+# Automatic deploy: every push to master (or main) builds and publishes to gh-pages.
+# Requires: repo Settings → Pages → Source = branch gh-pages / (root).
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - master
+      - main
   workflow_dispatch:
 
 permissions:

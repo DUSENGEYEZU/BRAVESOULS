@@ -35,7 +35,7 @@ Output: `dist/bravesouls/`
 
 ## Deployment
 
-Production hosting uses **GitHub Pages** on the domain **`bravesoulswellness.com`**. DNS, GitHub settings, `ng deploy` options, and troubleshooting are documented in **[DEPLOYMENT.md](./DEPLOYMENT.md)**.
+Production hosting uses **GitHub Pages** on the domain **`bravesoulswellness.com`**. Pushing to **`master`** (or **`main`**) triggers an automatic deploy via GitHub Actions. DNS, GitHub settings, `ng deploy` options, and troubleshooting are documented in **[DEPLOYMENT.md](./DEPLOYMENT.md)**.
 
 ## Brand
 

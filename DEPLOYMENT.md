@@ -64,7 +64,7 @@ GitHub recommends adding the custom domain in the repo **before** relying on DNS
 
 ## GitHub Actions (automated deploy)
 
-The workflow [`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) runs on every push to **`master`** (and can be run manually via **Actions → Deploy to GitHub Pages → Run workflow**).
+The workflow [`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) runs on **every push** to **`master`** or **`main`** (and can be run manually via **Actions → Deploy to GitHub Pages → Run workflow**).
 
 It runs `npm ci`, `npm run build-prod`, then publishes `dist/bravesouls/browser` to the **`gh-pages`** branch with a **`CNAME`** file for `bravesoulswellness.com`.
 
