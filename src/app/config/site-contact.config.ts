@@ -3,16 +3,15 @@
  */
 export const SITE_CONTACT = {
   /** Inbound messages from the website (mailto + form handoff) */
-  email: 'dusengyezulongin@gmail.com',
+  email: 'mufukuzij@gmail.com',
 
   /** Shown in the UI (spaces optional) */
-  phoneDisplay: '0787 344 599',
+  phoneDisplay: '+250 788 675 638',
 
   /**
    * E.164 for tel:, SMS, WhatsApp (Rwanda: +250 and national number without leading 0).
-   * Example: 0787344599 → +250787344599
    */
-  phoneE164: '+250787344599',
+  phoneE164: '+250788675638',
 } as const;
 
 /**
@@ -22,7 +21,7 @@ export const SITE_CONTACT = {
  * 3. Leave empty to only open Gmail/Yahoo/mailto — then you must click Send in the mail window.
  */
 export const WEB3FORMS_ACCESS_KEY = '9ff1a565-99be-4d25-9503-78a4f8b98259';
-
+// https://web3forms.com
 export type InquiryTopic = 'general' | 'coaching' | 'consultation' | 'partnership';
 
 export const INQUIRY_TOPIC_LABEL: Record<InquiryTopic, string> = {
