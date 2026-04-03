@@ -15,13 +15,12 @@ export const SITE_CONTACT = {
 } as const;
 
 /**
- * Real inbox delivery (static sites cannot send SMTP by themselves).
- * 1. Create a free key at https://web3forms.com (use the same email as `SITE_CONTACT.email`).
- * 2. Paste the access key here. Submissions are POSTed to Web3Forms and emailed to you.
- * 3. Leave empty to only open Gmail/Yahoo/mailto — then you must click Send in the mail window.
+ * Real inbox delivery via Web3Forms. Important: the address that RECEIVES submissions is set on
+ * https://web3forms.com (dashboard for this access key), NOT by `SITE_CONTACT.email` above.
+ * If mail still goes to an old Gmail, log into Web3Forms → your form → change notification email,
+ * OR create a new form while logged in as the correct address and paste the new key here.
  */
 export const WEB3FORMS_ACCESS_KEY = '9ff1a565-99be-4d25-9503-78a4f8b98259';
-// https://web3forms.com
 export type InquiryTopic = 'general' | 'coaching' | 'consultation' | 'partnership';
 
 export const INQUIRY_TOPIC_LABEL: Record<InquiryTopic, string> = {
