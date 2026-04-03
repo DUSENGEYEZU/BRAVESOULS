@@ -24,6 +24,39 @@ The workflow file automates **building and pushing** to `gh-pages`. **GitHub Act
 
 Point the domain to GitHub Pages. Official reference: [Managing a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
+### Namecheap (remove parking, add GitHub records)
+
+Do this while logged in at [namecheap.com](https://www.namecheap.com). The **default / parking page** means Namecheap is still serving the domain until you replace those DNS rows.
+
+1. **Domain List** → **Manage** next to `bravesoulswellness.com`.
+2. Open the **Domain** tab (top). If **Redirect Domain** is turned on or points to a Namecheap parking URL, **remove or disable** the redirect so DNS can control the site.
+3. Open the **Advanced DNS** tab (same Manage screen).
+4. In **HOST RECORDS**, **delete** anything that keeps parking or wrong targets:
+   - **A** records for **`@`** whose value is **`192.64.x.x`** or anything that is not GitHub’s four IPs below.
+   - **URL Redirect Record** rows for **`@`** or **`www`** (they override normal hosting).
+   - **CNAME** for **`www`** pointing to **`parkingpage.namecheap.com`** (or similar).
+5. **Add four A records** for the root domain (one row each — Namecheap needs four separate lines):
+
+   | Type | Host | Value | TTL |
+   |------|------|--------|-----|
+   | **A Record** | **@** | `185.199.108.153` | Automatic (or 30 min) |
+   | **A Record** | **@** | `185.199.109.153` | Automatic |
+   | **A Record** | **@** | `185.199.110.153` | Automatic |
+   | **A Record** | **@** | `185.199.111.153` | Automatic |
+
+6. **Add one CNAME** for `www`:
+
+   | Type | Host | Value |
+   |------|------|--------|
+   | **CNAME Record** | **www** | `DUSENGEYEZU.github.io` |
+
+   Do **not** add `https://`, paths, or `/BRAVESOULS` — only `DUSENGEYEZU.github.io`.
+
+7. Click the **save** control (green check) if Namecheap asks you to confirm changes.
+8. Wait **30 minutes to a few hours** (sometimes up to 24–48 hours). Then in GitHub: **Settings → Pages** — **Custom domain** `bravesoulswellness.com` should show DNS OK; enable **Enforce HTTPS** when it appears.
+
+If you use Namecheap **Email Forwarding** only, do not delete the **MX** records you need for mail. If you are not using email on this domain yet, you can ignore MX for this GitHub setup.
+
 ### Apex (`bravesoulswellness.com`)
 
 Create **four `A` records** for the apex (often shown as `@`):
