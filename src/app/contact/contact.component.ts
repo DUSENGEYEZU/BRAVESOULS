@@ -108,7 +108,7 @@ export class ContactComponent implements OnInit, OnDestroy {
           },
           error: () => {
             this.sending = false;
-            this.submitError = 'Could not send. Check your connection, or use “Open in email app” below.';
+            this.submitError = 'Could not send. Check your connection, try WhatsApp, or use the link below to open your email app.';
           },
         });
       return;

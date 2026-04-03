@@ -97,22 +97,10 @@
           (click)="openInEmailAppInstead()"
           class="text-sm text-brave-gold/80 hover:text-brave-gold underline underline-offset-2"
         >
-          Open in my email app instead (Gmail / Yahoo / …)
+          Prefer to compose in your own email app?
         </button>
         <p class="text-xs text-gray-500">
-          <ng-container *ngIf="serverSendConfigured; else mailtoExplain">
-            Submissions are emailed to
-            <strong class="text-gray-400">{{ contact.email }}</strong>
-            via Web3Forms. Update email or key in
-            <code class="text-gray-400">site-contact.config.ts</code>.
-          </ng-container>
-          <ng-template #mailtoExplain>
-            <strong class="text-gray-400">Why nothing arrived:</strong> without a Web3Forms key, we only
-            <em>open</em> your mail app — you must click
-            <strong>Send</strong> in Gmail/Yahoo. For automatic delivery to your inbox, add a free key at
-            <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" class="text-brave-gold underline">web3forms.com</a>
-            and paste it into <code class="text-gray-400">WEB3FORMS_ACCESS_KEY</code>.
-          </ng-template>
+          We aim to reply within 1–2 business days using the email or WhatsApp details you provide.
         </p>
       </form>
     </div>
