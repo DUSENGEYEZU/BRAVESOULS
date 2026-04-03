@@ -5,7 +5,22 @@
       <div class="max-w-xl">
         <!-- Branding -->
         <div class="hero-text-in flex items-center gap-3 mb-4" style="animation-delay: 0.1s">
-          <img [src]="logoSrc" (error)="onLogoError()" alt="Brave Souls" class="h-12 w-auto max-w-[200px] object-contain" />
+          <!-- Decorative mark: company name is in the text beside it; avoids “image” + duplicate announcement for screen readers -->
+          <img
+            [src]="logoSrc"
+            [attr.srcset]="logoSrcset"
+            [attr.sizes]="logoSizes"
+            width="989"
+            height="679"
+            (error)="onLogoError()"
+            alt=""
+            aria-hidden="true"
+            draggable="false"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            class="brand-logo h-16 w-auto max-w-[260px] object-contain drop-shadow-md sm:h-20 sm:max-w-[300px] md:h-24 md:max-w-[340px]"
+          />
           <div>
             <div class="text-brave-gold font-bold text-lg md:text-xl tracking-wide uppercase">Brave Souls</div>
             <div class="text-brave-gold/90 text-sm font-semibold tracking-wide uppercase">Wellness Group Ltd</div>

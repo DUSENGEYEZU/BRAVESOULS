@@ -1,3 +1,9 @@
+/* Logo reads as part of the wordmark row, not a generic photo */
+.brand-logo {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 /* Hero left panel: staggered text entrance */
 .hero-text-in {
   opacity: 0;
