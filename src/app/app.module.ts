@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LucideAngularModule } from 'lucide-angular';
 import { Building, HeartPulse, GraduationCap, BriefcaseBusiness, Cpu } from 'lucide-angular';
@@ -53,6 +54,7 @@ import { BookConsultationComponent } from './book-consultation/book-consultation
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
       LucideAngularModule.pick({

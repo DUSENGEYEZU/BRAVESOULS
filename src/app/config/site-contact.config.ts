@@ -15,6 +15,14 @@ export const SITE_CONTACT = {
   phoneE164: '+250787344599',
 } as const;
 
+/**
+ * Real inbox delivery (static sites cannot send SMTP by themselves).
+ * 1. Create a free key at https://web3forms.com (use the same email as `SITE_CONTACT.email`).
+ * 2. Paste the access key here. Submissions are POSTed to Web3Forms and emailed to you.
+ * 3. Leave empty to only open Gmail/Yahoo/mailto — then you must click Send in the mail window.
+ */
+export const WEB3FORMS_ACCESS_KEY = '9ff1a565-99be-4d25-9503-78a4f8b98259';
+
 export type InquiryTopic = 'general' | 'coaching' | 'consultation' | 'partnership';
 
 export const INQUIRY_TOPIC_LABEL: Record<InquiryTopic, string> = {

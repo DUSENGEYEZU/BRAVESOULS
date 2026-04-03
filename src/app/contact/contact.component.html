@@ -71,17 +71,48 @@
             placeholder="Your Message..."
           ></textarea>
         </div>
+        <p *ngIf="submitSuccess" class="text-sm text-green-400">{{ submitSuccess }}</p>
         <p *ngIf="submitError" class="text-sm text-red-400">{{ submitError }}</p>
         <div class="flex flex-col sm:flex-row gap-3">
-          <button type="submit" class="bg-brave-gold hover:bg-brave-gold-light text-brave-black font-semibold flex-1 py-3 rounded-lg transition">Send via email</button>
-          <button type="button" (click)="sendViaWhatsApp()" class="border border-brave-gold text-brave-gold hover:bg-brave-gold hover:text-brave-black font-semibold flex-1 py-3 rounded-lg transition">
+          <button
+            type="submit"
+            [disabled]="sending"
+            class="bg-brave-gold hover:bg-brave-gold-light text-brave-black font-semibold flex-1 py-3 rounded-lg transition disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {{ sending ? 'Sending…' : serverSendConfigured ? 'Send message' : 'Send via email' }}
+          </button>
+          <button
+            type="button"
+            [disabled]="sending"
+            (click)="sendViaWhatsApp()"
+            class="border border-brave-gold text-brave-gold hover:bg-brave-gold hover:text-brave-black font-semibold flex-1 py-3 rounded-lg transition disabled:opacity-60"
+          >
             Send via WhatsApp
           </button>
         </div>
+        <button
+          *ngIf="serverSendConfigured"
+          type="button"
+          [disabled]="sending"
+          (click)="openInEmailAppInstead()"
+          class="text-sm text-brave-gold/80 hover:text-brave-gold underline underline-offset-2"
+        >
+          Open in my email app instead (Gmail / Yahoo / …)
+        </button>
         <p class="text-xs text-gray-500">
-          <strong class="text-gray-400">Send via email:</strong> if your address ends with Gmail / Yahoo / Outlook, we open that website’s compose window (so it doesn’t force your computer’s default mail app). Other addresses use your normal mail program.
-          WhatsApp uses the same message. Change targets in
-          <code class="text-gray-400">site-contact.config.ts</code>.
+          <ng-container *ngIf="serverSendConfigured; else mailtoExplain">
+            Submissions are emailed to
+            <strong class="text-gray-400">{{ contact.email }}</strong>
+            via Web3Forms. Update email or key in
+            <code class="text-gray-400">site-contact.config.ts</code>.
+          </ng-container>
+          <ng-template #mailtoExplain>
+            <strong class="text-gray-400">Why nothing arrived:</strong> without a Web3Forms key, we only
+            <em>open</em> your mail app — you must click
+            <strong>Send</strong> in Gmail/Yahoo. For automatic delivery to your inbox, add a free key at
+            <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" class="text-brave-gold underline">web3forms.com</a>
+            and paste it into <code class="text-gray-400">WEB3FORMS_ACCESS_KEY</code>.
+          </ng-template>
         </p>
       </form>
     </div>
