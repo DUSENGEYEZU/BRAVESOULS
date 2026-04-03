@@ -44,6 +44,6 @@
         </ul>
       </div>
     </div>
-    <a routerLink="/contact" class="inline-block mt-10 bg-brave-gold hover:bg-brave-gold-light text-brave-black font-semibold px-6 py-3 rounded-lg transition">Apply for Coaching</a>
+    <a routerLink="/contact" [queryParams]="{ topic: 'coaching' }" class="inline-block mt-10 bg-brave-gold hover:bg-brave-gold-light text-brave-black font-semibold px-6 py-3 rounded-lg transition">Apply for Coaching</a>
   </div>
 </div>
