@@ -20,7 +20,8 @@ export const SITE_CONTACT = {
  * If mail still goes to an old Gmail, log into Web3Forms → your form → change notification email,
  * OR create a new form while logged in as the correct address and paste the new key here.
  */
-export const WEB3FORMS_ACCESS_KEY = '9ff1a565-99be-4d25-9503-78a4f8b98259';
+// export const WEB3FORMS_ACCESS_KEY = '9ff1a565-99be-4d25-9503-78a4f8b98259';
+export const WEB3FORMS_ACCESS_KEY = 'bf723724-d229-451d-91e2-c6bd6acfe7e4';
 export type InquiryTopic = 'general' | 'coaching' | 'consultation' | 'partnership';
 
 export const INQUIRY_TOPIC_LABEL: Record<InquiryTopic, string> = {
